@@ -90,7 +90,8 @@ try {
 ///////////////SHOW ROUTE /////////////////////
 app.get("/user", (req,res) => {
   //res.send("sucess");
-  let q =`SELECT * FROM user`;
+  let q1 =`SELECT * FROM user`;
+  let q2 = `SELECT count(*) FROM user`;
 try {
   connection.query(q, (err, users) => {
  if (err) throw err;
