@@ -73,26 +73,27 @@ res.redirect("/user");
 });
 
 ///////////////SHOW ROUTE /////////////////////
-app.get("/user", (req,res) => {
-  //res.send("sucess");
-  let q1 =`SELECT * FROM user`;
-  let q2 = `SELECT count(*) FROM user`;
-try {
-  connection.query(q, (err, users) => {
- if (err) throw err;
-  //console.log(result);
-  res.render("showuser.ejs", { users });
-  // console.log(result[0]["count(*)"]);
-  // res.send(result); 
-  // console.log(result.length)
-  // console.log(result[0]);
-  // console.log(result[1]);
-});
-} catch (err) {
-  console.log(err);
-  res.send("some error in DB");
-}
+app.get("/user", (req, res) => {
+  let q1 = 'SELECT * FROM user';
+  let q2 = 'SELECT count(*) AS count FROM user';
 
+  connection.query(q1, (err, users) => {
+    if (err) {
+      console.log(err);
+      return res.send("some error in DB");
+    }
+
+    connection.query(q2, (err, result) => {
+      if (err) {
+        console.log(err);
+        return res.send("some error in DB");
+      }
+
+      let count = result[0].count;
+
+      res.render("showuser.ejs", { users, count });
+    });
+  });
 });
    
 ///////////////EDIT ROUTE////////////////////////
