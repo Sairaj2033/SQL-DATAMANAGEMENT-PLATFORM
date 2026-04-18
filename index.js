@@ -74,8 +74,8 @@ res.redirect("/user");
 
 ///////////////SHOW ROUTE /////////////////////
 app.get("/user", (req, res) => {
-  let q1 = 'SELECT * FROM user';
-  let q2 = 'SELECT count(*) AS count FROM user';
+  let q1 = "SELECT * FROM `user`";
+  let q2 = "SELECT count(*) AS count FROM `user`";
 
   connection.query(q1, (err, users) => {
     if (err) {
@@ -90,7 +90,6 @@ app.get("/user", (req, res) => {
       }
 
       let count = result[0].count;
-
       res.render("showuser.ejs", { users, count });
     });
   });
