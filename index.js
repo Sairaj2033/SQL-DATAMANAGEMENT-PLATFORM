@@ -12,10 +12,10 @@ app.set("view  engine", "ejs");
 app.set("views", path.join(__dirname,"/views"));
 
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  database: process.env.DB_NAME || "delta_app",
-  password: process.env.DB_PASSWORD || "Sairaj@8563"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD
 });
 
 let getRandomUser = () => {
@@ -183,8 +183,10 @@ app.post("/user",(req,res)=> {
 
 
 
- app.listen("3030", () => {
-  console.log("server is listening to port 3030");
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, () => {
+  console.log(`server is listening to port ${PORT}`);
 });
 
 
