@@ -1,19 +1,19 @@
 {
-  "name": "sql-class",
+  "name": "sql-data-management-platform",
   "version": "1.0.0",
-  "description": "",
+  "description": "SQL CRUD Web App",
   "license": "ISC",
-  "author": "SAIRAJ PATIL",
+  "author": "Sairaj Patil",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "dependencies": {
     "@faker-js/faker": "^10.4.0",
-    "ejs": "^5.0.1",
-    "express": "^5.2.1",
-    "mysql2": "^3.20.0",
-    "uuid": "^13.0.0"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.1",
+    "uuid": "^11.1.0"
   }
 }
