@@ -11,11 +11,11 @@ app.use(express.urlencoded ({ extended:true }));
 app.set("view  engine", "ejs");
 app.set("views", path.join(__dirname,"/views"));
 
-const connection = mysql.createConnection ({
-  host:'localhost',
-  user:'root',
-  database:'delta_app',
-  password:'Sairaj@8563'
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "root",
+  database: process.env.DB_NAME || "delta_app",
+  password: process.env.DB_PASSWORD || "Sairaj@8563"
 });
 
 let getRandomUser = () => {
