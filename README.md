@@ -45,18 +45,31 @@ This application allows users to perform complete **CRUD operations** with a cle
 ---
 
 ## 📂 Project Structure
-project/ │── views/ │   ├── showuser.ejs │   ├── edit.ejs │   ├── new.ejs │── public/ │── index.js │── package.json
+project/
+│── views/
+│   ├── showuser.ejs
+│   ├── edit.ejs
+│   ├── new.ejs
+│── public/
+│── index.js
+│── package.json
 
 ---
 
 ## 🔑 Environment Variables
 
 Create a `.env` file in root:
-DB_HOST=your-db-host DB_USER=your-db-user DB_PASSWORD=your-db-password DB_NAME=your-db-name DB_PORT=your-db-port
+DB_HOST=your-db-host
+DB_USER=your-db-user
+DB_PASSWORD=your-db-password
+DB_NAME=your-db-name
+DB_PORT=your-db-port
 ---
 
 ## ▶️ Run Locally
-npm install npm start
+npm install
+npm start
+
 http://localhost:3030/user
 
 ---
